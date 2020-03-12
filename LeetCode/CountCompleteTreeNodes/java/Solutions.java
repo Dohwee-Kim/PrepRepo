@@ -14,6 +14,7 @@ class Solutions {
         leaf1.left = leaf3;
 
         System.out.println( recursivelyCountNodes(root) );
+        System.out.println( improvedCountNodes(root) );
 
     }
 
@@ -23,6 +24,30 @@ class Solutions {
         }
         else {
             return recursivelyCountNodes( root.left ) + recursivelyCountNodes( root.right ) + 1;
+        }
+    }
+
+    public static int improvedCountNodes(TreeNode root) {
+        int leftHeight=0 , rightHeight = 0;
+        TreeNode leftNodePointer = root;
+        TreeNode rightNodePointer = root; // Pointers
+
+        while( leftNodePointer != null ) {
+            leftHeight++;
+            leftNodePointer = leftNodePointer.left;
+        }
+
+        while( rightNodePointer != null ) {
+            rightHeight++;
+            rightNodePointer = rightNodePointer.right; 
+        }
+
+        if (leftHeight == rightHeight){
+            return (int)Math.pow(2, leftHeight) - 1 ;
+        }
+
+        else {
+            return improvedCountNodes(root.left) + improvedCountNodes(root.right) + 1;
         }
     }
 
