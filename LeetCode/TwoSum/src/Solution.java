@@ -8,7 +8,6 @@ public class Solution {
         //bruteForceTwoSum(givenNums, target);
         twoSum(givenNums, target);
     }
-
     public static int[] bruteForceTwoSum(int[] nums, int target) {
         int[] result = new int[2];
         for (int i=0; i< nums.length; i++) {
@@ -22,7 +21,6 @@ public class Solution {
         }
         return null;
     }
-
     // 3MS, 52.02 %, 39.3 MB , 8.27 .. still not good
     public static int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];
