@@ -22,6 +22,9 @@ public class FibonacciWithMemo {
             return n;
         }
         else {
+	    if (memo[n] >0){
+	        return memo[n]
+	    }
             memo[n] = fibonacciWithMemo(n-1) + fibonacciWithMemo(n-2);
             return memo[n];
         }
